@@ -49,7 +49,7 @@ namespace Practica2Nomina
                     string.IsNullOrWhiteSpace(txtHoraExtra.Text) ||
                     string.IsNullOrWhiteSpace(txtHoraDia.Text))
                 {
-                    MessageBox.Show("⚠️ Debes ingresar todas las tarifas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debes ingresar todas las tarifas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -59,7 +59,7 @@ namespace Practica2Nomina
                     !decimal.TryParse(txtHoraExtra.Text, out extra) ||
                     !decimal.TryParse(txtHoraDia.Text, out doble))
                 {
-                    MessageBox.Show("⚠️ Las tarifas deben ser valores numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Las tarifas deben ser valores numéricos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -74,13 +74,13 @@ namespace Practica2Nomina
                 // Guardar en JSON
                 TarifasHelper.Guardar(tarifas);
 
-                MessageBox.Show("✅ Tarifas guardadas correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tarifas guardadas correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
                 // Captura cualquier error inesperado
-                MessageBox.Show($"❌ Ocurrió un error al guardar las tarifas.\n\nDetalles: {ex.Message}",
+                MessageBox.Show($"Ocurrió un error al guardar las tarifas.\n\nDetalles: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
